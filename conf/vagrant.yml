@@ -45,7 +45,7 @@
     - cron: name="check dirs" minute="0" hour="5,2" job="ls -alh > /dev/null"
 
   vars:
-    domain_name: local.example.com
+    domain_name: local.mentor.com
 
     wkv_site_env: local
     base_pubkeys_enable: False
