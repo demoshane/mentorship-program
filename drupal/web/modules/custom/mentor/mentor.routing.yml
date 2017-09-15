@@ -7,7 +7,7 @@ mentor_example_page:
     _permission: 'access content'
 
 mentor_another_example:
-  path: '/mentorship/example-page2'
+  path: '/mentorship/example-page2/{name}'
   defaults:
     _controller: '\Drupal\mentor\Controller\MentorController::examplePage2'
     _title: 'Another page as test'

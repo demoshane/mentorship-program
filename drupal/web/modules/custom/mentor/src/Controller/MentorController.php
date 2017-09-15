@@ -26,9 +26,9 @@ class MentorController extends Controllerbase {
    * @return Array
    *   Array of my contents.
    */
-  public function examplePage2() {
+  public function examplePage2($name) {
     $contents = array(
-      '#markup' => "Added another page as a tes within same controller..",
+      '#markup' => t("Hello, @name", array('@name' => $name)),
     );
     return $contents;
   }
