@@ -22,7 +22,7 @@ class MentorController extends Controllerbase {
   }
 
   /**
-   * Returns my example page.
+   * Returns my example page that uses argument.
    * @return Array
    *   Array of my contents.
    */
