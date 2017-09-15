@@ -1,0 +1,7 @@
+mentor.example_page:
+  path: '/mentorship/example-page'
+  defaults:
+    _controller: '\Drupal\mentor\Controller\MentorController::examplePage'
+    _title: 'Wow, page. Am I senior already?'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,8 @@
+name: Mentorship program - Training module
+type: module
+description: Contains code for mentorship program training tasks
+package: Mentorship program
+core: '8.x'
+dependencies:
+  - drupal:block
+
