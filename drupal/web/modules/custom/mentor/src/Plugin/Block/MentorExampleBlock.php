@@ -55,8 +55,16 @@ class MentorExampleBlock extends BlockBase {
     // Better way for this?
     $mentee = !empty($this->configuration['mentee']) ? $this->configuration['mentee'] : 'no one';
     $mentor = !empty($this->configuration['mentor']) ? $this->configuration['mentor'] : '';
+    $pages = '
+    <ul>
+        <li><a href="/mentorship/example-page">Example page</a></li>
+        <li><a href="/mentorship/example-page2/' . $mentor . '">Example page for ' . $mentor . '</a></li>
+        <li><a href="/mentorship/example-page2/' . $mentee . '">Example page for ' . $mentee . '</a></li>
+    </ul>
+    ';
     return array(
-      '#markup' => t("Hello @mentor. You're mentor of @mentee. Welcome to the mentorship program both of you!", array('@mentor' => $mentor, '@mentee' => $mentee)),
+      '#markup' => t("Hello @mentor. You're mentor of @mentee. Welcome to the mentorship program both of you!", array('@mentor' => $mentor, '@mentee' => $mentee)) .
+      t('Please see some example pages:') . $pages,
     );
   }
 }
