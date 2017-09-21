@@ -27,7 +27,7 @@ class MentorRolesBlock extends BlockBase implements ContainerFactoryPluginInterf
 
 
   /**
-   * Constructs a new UserLoginBlock instance.
+   * Constructs a new MentorRolesBlock instance.
    *
    * @param array $configuration
    *   The plugin configuration, i.e. an array with configuration values keyed
