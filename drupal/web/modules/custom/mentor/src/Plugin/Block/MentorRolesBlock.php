@@ -41,7 +41,7 @@ class MentorRolesBlock extends BlockBase implements ContainerFactoryPluginInterf
    * @param \Drupal\Core\Session\AccountProxyInterface $current_user
    *   The current user object.
    */
-  // I must pass here everything that create has inside the container. Refer to UserLoginBlock.php
+  // I must pass where everything that is provided to new static() in self::create(). Refer to UserLoginBlock.php
   public function __construct(array $configuration, $plugin_id, $plugin_definition, AccountProxyInterface $currentUser) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
