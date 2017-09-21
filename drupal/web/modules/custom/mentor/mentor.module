@@ -1,1 +1,5 @@
 <?php
+/**
+ * @file
+ * Just in case for now. This is required for files not defining classes.
+ */
