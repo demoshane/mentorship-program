@@ -1,0 +1,11 @@
+view recipe entity:
+  title: 'View recipe entity'
+add recipe entity:
+  title: 'Add recipe entity'
+edit recipe entity:
+  title: 'Edit recipe Entity'
+delete recipe entity:
+  title: 'Delete recipe entity'
+administer recipe entity:
+  title: 'Administer recipe entity'
+  restrict access: TRUE
