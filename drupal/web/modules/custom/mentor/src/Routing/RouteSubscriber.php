@@ -20,5 +20,9 @@ class RouteSubscriber extends RouteSubscriberBase {
     if ($route = $collection->get('system.admin_content')) {
       $route->setPath('/content');
     }
+    // Change title for '/admin/report'.
+    if ($route = $collection->get('system.admin_reports')) {
+      $route->setDefault('_title', 'Something important');
+    }
   }
 }
