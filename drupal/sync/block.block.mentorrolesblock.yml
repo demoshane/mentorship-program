@@ -1,4 +1,4 @@
-uuid: 721c67c7-dadd-4235-8ecd-8e74cef8c07c
+uuid: b00691d7-2662-4c34-aab6-a7eb109315ad
 langcode: en
 status: true
 dependencies:
@@ -6,17 +6,15 @@ dependencies:
     - mentor
   theme:
     - bartik
-id: mentorexampleblock
+id: mentorrolesblock
 theme: bartik
 region: sidebar_first
 weight: 0
 provider: null
-plugin: mentor_example
+plugin: mentor_roles
 settings:
-  id: mentor_example
-  label: 'Mentor: Example block'
+  id: mentor_roles
+  label: 'Mentor: Roles block'
   provider: mentor
   label_display: visible
-  mentee: Tuomas
-  mentor: Raimonds
 visibility: {  }
