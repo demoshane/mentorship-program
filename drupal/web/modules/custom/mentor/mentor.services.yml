@@ -1,0 +1,6 @@
+services:
+  mentor.route_subscriber:
+    class: Drupal\mentor\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
