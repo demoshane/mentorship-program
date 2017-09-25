@@ -1,0 +1,11 @@
+entity.recipe.add_form:
+  route_name: entity.recipe.add_page
+  title: 'Add Recipe'
+  appears_on:
+    - entity.recipe.collection
+entity.recipe_type.add_form:
+  route_name: entity.recipe_type.add_form
+  title: 'Add Recipe type'
+  appears_on:
+    - entity.recipe_type.collection
+

@@ -1,4 +1,4 @@
-uuid: 48623f3e-4c2d-4fec-b315-e915db775735
+uuid: 721c67c7-dadd-4235-8ecd-8e74cef8c07c
 langcode: en
 status: true
 dependencies:
@@ -17,4 +17,6 @@ settings:
   label: 'Mentor: Example block'
   provider: mentor
   label_display: visible
+  mentee: 'no one'
+  mentor: ''
 visibility: {  }

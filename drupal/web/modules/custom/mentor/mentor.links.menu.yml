@@ -1,0 +1,18 @@
+
+# Recipe menu items definition
+entity.recipe.collection:
+  title: 'Recipe list'
+  route_name: entity.recipe.collection
+  description: 'List Recipe entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Recipe type menu items definition
+entity.recipe_type.collection:
+  title: 'Recipe type'
+  route_name: entity.recipe_type.collection
+  description: 'List Recipe type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+
