@@ -33,3 +33,11 @@ function mentor_theme_suggestions_recipe(array $variables) {
   $suggestions[] = 'recipe__' . $entity->id() . '__' . $sanitized_view_mode;
   return $suggestions;
 }
+
+/**
+ * @param $links
+ * Implements hook_menu_links_discovered_alter(&$links).
+ */
+function mentor_menu_links_discovered_alter(&$links) {
+  if($links['system.admin_content']) {$links['system.admin_content']['title'] = t('Other content');}
+}
