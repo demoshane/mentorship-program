@@ -3,4 +3,5 @@ services:
     class: Drupal\mentor\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
-
+  mentor.weight_converter:
+    class: Drupal\mentor\WeightConverter
