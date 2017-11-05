@@ -5,3 +5,6 @@ services:
       - { name: event_subscriber }
   mentor.weight_converter:
     class: Drupal\mentor\WeightConverter
+  mentor.recipe_fetcher:
+    class: Drupal\mentor\RecipeFetcher
+    arguments: ['@mentor.weight_converter']

@@ -38,18 +38,18 @@ class MentorExampleBlock extends BlockBase implements ContainerFactoryPluginInte
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
    * @param \Drupal\mentor\WeightConverterInterface $weight_converter
-   *   TODO: Ask Raimonds. Is $weight_converter weight or interface here?
+   *   The interface for weight converter.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, WeightConverterInterface $weight_converter) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, WeightConverterInterface $weightConverter) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->weightConverter = $weight_converter;
+    $this->weightConverter = $weightConverter; // <--
   }
 
   /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-
+    // These need to match order that __construct "eats" them.
     return new static(
       $configuration,
       $plugin_id,

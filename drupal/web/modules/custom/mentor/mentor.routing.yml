@@ -13,3 +13,12 @@ mentor_another_example:
     _title: 'Another page as test'
   requirements:
     _permission: 'access content'
+
+mentor_json_example:
+  path: '/mentorship/json'
+  defaults:
+    _controller: '\Drupal\mentor\Controller\MentorController::exampleJson'
+    _title: 'Parsed Json'
+    url: 'https://gist.githubusercontent.com/maijs/56c085e739f3ff6e3159c43eb82f22d6/raw/e4330640f2be7a961060fafe65d497a8c8844329/recipe.json'
+  requirements:
+    _permission: 'access content'
