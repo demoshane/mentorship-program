@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains service_swapper.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function service_swapper_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the service_swapper module.
+    case 'help.page.service_swapper':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Mentorship program - service swapper') . '</p>';
+      return $output;
+
+    default:
+  }
+}

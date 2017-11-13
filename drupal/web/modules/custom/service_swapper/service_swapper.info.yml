@@ -1,0 +1,5 @@
+name: service_swapper
+type: module
+description: Mentorship program - service swapper
+core: 8.x
+package: Custom
