@@ -22,3 +22,10 @@ function service_swapper_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function service_swapper_entity_type_alter(array &$entity_types) {
+  $entity_types['node']->setHandlerClass('access', Drupal\service_swapper\ServiceSwapperAccessControlHandler::class);
+}
