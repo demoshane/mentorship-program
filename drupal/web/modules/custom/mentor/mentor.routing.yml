@@ -22,3 +22,17 @@ mentor_json_example:
     url: 'https://gist.githubusercontent.com/maijs/56c085e739f3ff6e3159c43eb82f22d6/raw/e4330640f2be7a961060fafe65d497a8c8844329/recipe.json'
   requirements:
     _permission: 'access content'
+
+mentor_recipe_api:
+  path: '/recipe-api/{call}'
+  #Limit to this method.
+  methods: [POST]
+  defaults:
+    _controller: '\Drupal\mentor\Controller\MentorController::recipeAPI'
+    _title: 'Recipe API'
+    #Default to first as call value
+    call: first
+    url: 'https://gist.githubusercontent.com/maijs/56c085e739f3ff6e3159c43eb82f22d6/raw/e4330640f2be7a961060fafe65d497a8c8844329/recipe.json'
+  requirements:
+    _permission: 'access content'
+    call: first|last

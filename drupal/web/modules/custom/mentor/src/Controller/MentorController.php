@@ -62,4 +62,22 @@ class MentorController extends Controllerbase implements ContainerInjectionInter
     return $contents;
   }
 
+  /**
+   * Returns my example page that uses argument.
+   * @return Array
+   *   Array of my contents.
+   */
+  public function recipeAPI($call, $url) {
+    $recipe = $this->recipeFetcher->fetchRecipeFromUrl($url);
+    $parsedRecipe = $this->recipeFetcher->parseRecipeJSON($recipe);
+    if($call == 'first') {
+      $contents['title'] = ['#markup' => 'First recipe'];
+      $contents['recipe'] = $parsedRecipe;
+    }
+    elseif ($call == 'last') {
+      $contents['title'] = ['#markup' => 'Last recipe'];
+      $contents['recipe'] = $parsedRecipe;
+    }
+    return $contents;
+  }
 }
