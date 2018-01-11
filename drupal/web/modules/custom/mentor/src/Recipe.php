@@ -16,7 +16,7 @@ class Recipe extends Event {
   /**
    * Constructor.
    *
-   * @param Config $config
+   * @param $config
    */
   public function __construct($config) {
     $this->config = $config;
