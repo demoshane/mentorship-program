@@ -2,14 +2,14 @@
 
 /**
  * @file
- * Contains Drupal\mentor\Recipe.
+ * Contains Drupal\mentor\RecipeEvent.
  */
 
 namespace Drupal\mentor;
 
 use Symfony\Component\EventDispatcher\Event;
 
-class Recipe extends Event {
+class RecipeEvent extends Event {
 
   protected $config;
 

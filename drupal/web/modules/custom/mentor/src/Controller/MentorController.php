@@ -5,7 +5,7 @@ namespace drupal\mentor\Controller;
 use Drupal\Core\Controller\Controllerbase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\mentor\Recipe;
+use Drupal\mentor\RecipeEvent;
 
 // Implement my interface.
 use Drupal\mentor\RecipeFetcherInterface;
@@ -78,8 +78,8 @@ class MentorController extends Controllerbase implements ContainerInjectionInter
     // For testing purposes I want to do some actual alteration too.
     $config = array('name' => 'test', 'url' => $url, 'call' => $call);
 
-    // Create new Recipe object.
-    $recipe = new Recipe($config);
+    // Create new RecipeEvent object.
+    $recipe = new RecipeEvent($config);
 
     $event = $dispatcher->dispatch('recipeapi.fetch', $recipe);
 
