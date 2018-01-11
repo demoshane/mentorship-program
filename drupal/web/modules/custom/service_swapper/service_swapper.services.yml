@@ -1,0 +1,5 @@
+services:
+  service_swapper.recipeapi_event_subscriber:
+    class: Drupal\service_swapper\EventSubscriber\RecipeapiEventSubscriber
+    tags:
+      - { name: 'event_subscriber' }

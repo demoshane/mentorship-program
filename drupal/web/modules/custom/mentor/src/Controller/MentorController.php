@@ -5,6 +5,7 @@ namespace drupal\mentor\Controller;
 use Drupal\Core\Controller\Controllerbase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\mentor\Recipe;
 
 // Implement my interface.
 use Drupal\mentor\RecipeFetcherInterface;
@@ -70,9 +71,26 @@ class MentorController extends Controllerbase implements ContainerInjectionInter
   public function recipeAPI($call, $url) {
     $recipe = $this->recipeFetcher->fetchRecipeFromUrl($url);
     $parsedRecipe = $this->recipeFetcher->parseRecipeJSON($recipe);
+
+    // Dispatch event.
+    $dispatcher = \Drupal::service('event_dispatcher');
+
+    // For testing purposes I want to do some actual alteration too.
+    $config = array('name' => 'test', 'url' => $url, 'call' => $call);
+
+    // Create new Recipe object.
+    $recipe = new Recipe($config);
+
+    $event = $dispatcher->dispatch('recipeapi.fetch', $recipe);
+
+    $newData = $event->getConfig();
+
     if($call == 'first') {
       $contents['title'] = ['#markup' => 'First recipe'];
       $contents['recipe'] = $parsedRecipe;
+      if(!empty($newData['name']) && $newData['name'] != $config['name']) {
+        $contents['name'] = ['#markup' => t('Altered name via dispatcher / listener. New name') . ': ' . $newData['name']];
+      }
     }
     elseif ($call == 'last') {
       $contents['title'] = ['#markup' => 'Last recipe'];
