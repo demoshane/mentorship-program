@@ -5,6 +5,7 @@ namespace drupal\mentor\Controller;
 use Drupal\Core\Controller\Controllerbase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Drupal\mentor\RecipeEvent;
 
 // Implement my interface.
@@ -70,6 +71,12 @@ class MentorController extends Controllerbase implements ContainerInjectionInter
    */
   public function recipeAPI($call, $url) {
     $recipe = $this->recipeFetcher->fetchRecipeFromUrl($url);
+
+    // Add JSON response to be used alternatively.
+    $response = new Response();
+    $response->setContent(json_encode($recipe));
+    $response->headers->set('Content-Type', 'application/json');
+
     $parsedRecipe = $this->recipeFetcher->parseRecipeJSON($recipe);
 
     // Dispatch event.
@@ -96,6 +103,9 @@ class MentorController extends Controllerbase implements ContainerInjectionInter
       $contents['title'] = ['#markup' => 'Last recipe'];
       $contents['recipe'] = $parsedRecipe;
     }
-    return $contents;
+
+    return $response;
+    // Return normal page by uncommenting below and commenting above.
+    // return $contents;
   }
 }
